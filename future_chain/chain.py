@@ -1,4 +1,5 @@
 import json
+import hashlib
 
 def read_chain(chain_uri):
     with open(chain_uri) as chain_file:
@@ -16,4 +17,4 @@ def chain_write(chain_uri, info_dict):
     with open(chain_uri, "w") as chain_file:
         json.dump(chain, chain_file)
 
-chain_write("chain.json", {"info":10})
+chain_write("chain.json", {"info": hashlib.sha256(b"info").hexdigest()})
