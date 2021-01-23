@@ -19,3 +19,13 @@ Flow for verifying messages on the future chain:
 - 5. repeat *1* - *5* until genesis event
 
 This can also be done in reverse order starting at the genesis event
+
+## Proof of Concept 
+
+To see a really basic implementation if adding messages to a future chain, run:
+
+```
+python future_chain/chain.py
+python future_chain/chain.py
+python future_chain/chain.py
+```
