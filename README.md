@@ -14,6 +14,8 @@ Flow for verifying messages on the future chain:
 
 - 1. Read **current** packet (message + future_hash + past_salt)
 - 2. Read the **previous** packet in the chain (message + future_hash + past_salt)
-- 3. Hash the previous packet and confirm it is equal to the current past salt
-- 4. current  = previous
-- 5. repeat 1 - 5 until genesis event
+- 3. Hash the previous message and current past_salt and check it is equal to the previous future_hash
+- 4. **current** = **previous**
+- 5. repeat *1* - *5* until genesis event
+
+This can also be done in reverse order starting at the genesis event
